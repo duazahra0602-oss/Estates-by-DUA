@@ -80,7 +80,9 @@
 <h1 class="font-headline-md text-headline-md text-on-surface">Access Private Portfolio</h1>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Enter verified credentials to unlock your proprietary asset dossier.</p>
 </div>
-<form class="space-y-4 pt-2" onsubmit="event.preventDefault();">
+<form action="https://api.web3forms.com/submit" method="POST" class="space-y-4 pt-2">
+<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"/>
+<input type="hidden" name="form_name" value="Client Portal Sign In"/>
 <!-- Client Identifier Input -->
 <div class="space-y-1.5">
 <label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant" for="signin-email">
@@ -88,7 +90,7 @@
               </label>
 <div class="relative flex items-center">
 <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 text-[20px]">person_pin</span>
-<input class="w-full pl-11 pr-4 py-3 rounded-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/40 font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" id="signin-email" placeholder="e.g. h.vanderbilt@private.ch" type="email"/>
+<input class="w-full pl-11 pr-4 py-3 rounded-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/40 font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" name="email" id="signin-email" placeholder="e.g. h.vanderbilt@private.ch" type="email"/>
 </div>
 </div>
 <!-- Password Input with Toggle -->
@@ -101,7 +103,7 @@
 </div>
 <div class="relative flex items-center">
 <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant/60 text-[20px]">lock</span>
-<input class="w-full pl-11 pr-11 py-3 rounded-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/40 font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" id="signin-password" placeholder="••••••••••••" type="password"/>
+<input class="w-full pl-11 pr-11 py-3 rounded-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/40 font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" name="password" id="signin-password" placeholder="••••••••••••" type="password"/>
 <button aria-label="Toggle password visibility" class="absolute right-3.5 text-on-surface-variant/60 hover:text-on-surface transition-colors p-1" onclick="togglePasswordVisibility('signin-password', 'pwd-toggle-icon')" type="button">
 <span class="material-symbols-outlined text-[20px]" id="pwd-toggle-icon">visibility</span>
 </button>
@@ -161,11 +163,13 @@
 <h1 class="font-headline-md text-headline-md text-on-surface">Private Membership</h1>
 <p class="font-body-sm text-body-sm text-on-surface-variant">ÉLORA ESTATES operates strictly via advisory vetting &amp; invitation.</p>
 </div>
-<form class="space-y-3.5 pt-1" onsubmit="event.preventDefault();">
+<form action="https://api.web3forms.com/submit" method="POST" class="space-y-3.5 pt-1">
+<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"/>
+<input type="hidden" name="form_name" value="Invitation Verification Dossier"/>
 <div class="grid grid-cols-3 gap-2.5">
 <div class="space-y-1">
 <label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Title</label>
-<select class="w-full py-2.5 px-3 rounded-md bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest">
+<select name="title" class="w-full py-2.5 px-3 rounded-md bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest">
 <option>Mr.</option>
 <option>Mrs.</option>
 <option>Dr.</option>
@@ -176,21 +180,21 @@
 </div>
 <div class="col-span-2 space-y-1">
 <label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Full Legal Name</label>
-<input class="w-full py-2.5 px-3 rounded-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" placeholder="e.g. Christian de Saint-Germain" type="text"/>
+<input class="w-full py-2.5 px-3 rounded-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" name="name" placeholder="e.g. Christian de Saint-Germain" type="text"/>
 </div>
 </div>
 <div class="space-y-1">
 <label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Private Email Address</label>
-<input class="w-full py-2.5 px-3 rounded-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" placeholder="c.saintgermain@familyoffice.com" type="email"/>
+<input class="w-full py-2.5 px-3 rounded-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" name="email" placeholder="c.saintgermain@familyoffice.com" type="email"/>
 </div>
 <div class="grid grid-cols-2 gap-2.5">
 <div class="space-y-1">
 <label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Direct Mobile</label>
-<input class="w-full py-2.5 px-3 rounded-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" placeholder="+41 22 819 0000" type="tel"/>
+<input class="w-full py-2.5 px-3 rounded-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" name="phone" placeholder="+41 22 819 0000" type="tel"/>
 </div>
 <div class="space-y-1">
 <label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Invitation Key</label>
-<input class="w-full py-2.5 px-3 rounded-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest uppercase tracking-wider" placeholder="ELR-8842-X" type="text"/>
+<input class="w-full py-2.5 px-3 rounded-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest uppercase tracking-wider" name="invitation_key" placeholder="ELR-8842-X" type="text"/>
 </div>
 </div>
 <!-- Disclaimer Notice -->
@@ -311,6 +315,42 @@ document.addEventListener('DOMContentLoaded', function() {
       navLink.classList.add('border-b-2', 'border-primary-container', 'font-medium', 'text-on-surface');
       navLink.classList.remove('text-on-surface-variant');
     }
+  });
+});
+</script>
+
+
+<script>
+// Web3Forms AJAX submit handler — keeps page in place, shows thank-you
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('form[action="https://api.web3forms.com/submit"]').forEach(function(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.disabled = true; btn.style.opacity = '0.6'; }
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(d) { console.log('Web3Forms:', d); })
+      .catch(function(err) { console.log('Web3Forms error:', err); })
+      .finally(function() {
+        if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+        // Show success banner if one exists on this page
+        var banner = document.getElementById('form-success-banner');
+        if (banner) {
+          banner.classList.remove('hidden');
+          var p = banner.querySelector('p.font-body-sm');
+          if (p) p.textContent = 'Thank You, Your Request Has Been Sent. We Will Contact You Soon.';
+          banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        alert('Thank You, Your Request Has Been Sent. We Will Contact You Soon.');
+        form.reset();
+        // Close any open modals
+        if (typeof closeConsultationModal === 'function') { try { closeConsultationModal(); } catch(x){} }
+      });
+    });
   });
 });
 </script>
